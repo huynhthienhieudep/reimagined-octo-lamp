@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://static.gnome.org/css/inter.css">
   </head>
   <body>
-    
+    <div class="hero">
+      <section class="header"><h2 id="logo" aria-hidden="true">Đơn đăng kí tham gia câu lạc bộ</h2></section>
+    </div>
+    <div class="container">
+           <form>
+            <fieldset>
+                <div>
+                <label for="hovaten">Họ và tên:</label>
+                <input id="hovaten" type="text">
+                </div>
+                <div>
+                <label for="lop">Lớp: </label>
+                <input id="lop" type="text">
+                <div>
+                <div>
+                <label for="sdt">Số điện thoại: </label>
+                <input id="sdt" type="text">
+                <div>
+                <label>Giới tính:</label>
+
+                <input type="radio" id="male" name="sex" value="nam">
+                <label for="male">Nam</label>
+
+                <input type="radio" id="female" name="sex" value="nu">
+                <label for="female">Nữ</label>
+</div>
+                <div>
+                <div>
+                    <label for="tohop">Câu lạc bộ</label>
+                    <select id="tohop">
+                        <option>Câu lạc bộ Bóng Đá</option>
+                        <option>Câu lạc bộ Esport</option>
+                        <option>Câu lạc bộ Hóa Học</option>
+                        <option>Câu lạc bộ Vật lí</option>
+                    </select>
+                </div>
+                
+                <p class="combuttons">
+                  <a class="btn square">Gửi yêu cầu</a>
+                </p>
+            </fieldset>
+            
+        </form>
+        
+    </div>
   </body>
 </html>
