@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    overflow: hidden; 
+}
+
+/*khúc trên*/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/*cãi nhau với duy khôi 2 ngày vì cái style cho logo*/
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+    text-decoration: none;
+}
+
+.logo img {
+    height: 60px; 
+    width: auto; 
+    display: block;
+
+    transition: opacity 0.3s ease;
+}
+
+.logo img:hover {
+    opacity: 0.8;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 4px; /*t ko cho bo góc, thằng khôi sửa nữa xóa role*/
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.custom-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/*media*/
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slider-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Mặc định ẩn */
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+}
+
+.slider-media.active {
+    opacity: 1; /* chỉ hiện khi có class active */
+    z-index: 1; /* nhảy lên trên để nhìn thấy được */
+}
+
+.overlay {
+    z-index: 2; /* lớp phủ đen phải nằm trên ảnh/video */
+}
+
+.hero-content, .navbar, .contact-vertical {
+    z-index: 10; /* Nội dung chữ phải nằm trên cùng */
+}
+.btn-fill {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+}
+
+.btn-fill:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: #fff;
+    margin: 6px 0;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end; /* đưa chữ xuống dưới */
+    padding: 100px 8%;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* làm tối ảnh nền */
+    z-index: 1;
+}
+
+.hero-media {
+    /*ảnh thì tự đưa vào*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+#media-name {
+    color: #fff;
+    font-weight: 700;
+    transition: opacity 0.5s ease , transform 0.5s ease; /*mờ khi đổi tên */
+    transform: translateY(-6px);
+    display: inline-block;
+}
+
+/*xoay dọc*/
+.contact-vertical {
+    position: absolute;
+    right: 30px;
+    bottom: 150px;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+}
+
+/* đẹp trai trên điện thoại */
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .contact-vertical { display: none; }
+    .hero-content h1 { font-size: 3rem; }
+    .logo img {
+        height: 24px; 
+    }
+}
