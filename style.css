@@ -1,87 +1,95 @@
 :root {
-  /* Giữ nguyên bảng màu đặc trưng của GNOME */
+  --rounded-corner: 12px;
   --gnomeblue: #161E54;
-  --blue3: rgb(53, 132, 228);
-  --blue5: rgb(26, 95, 180);
   --light1: rgb(255, 255, 255);
   --dark3: rgb(61, 56, 70);
-  --dark4: rgb(36, 31, 49);
   --dark5: rgb(0, 0, 0);
-  --bg-color: #eee;
-  --fg-color: #000;
-  --rounded-corner: 12px;
-  --btnround: 500px;
+  --text: #f6f5f4;
+  --inter: InterVariable, "Inter Variable", Inter, sans-serif;
   --pagewidth: 50rem;
   --grid-gap: 3rem;
+  --btnround: 500px;
+  --bg-color: #eee;
+  --fg-color: #000;
   --slickease: cubic-bezier(.17,.89,.32,1.28);
-  --inter: InterVariable, "Inter Variable", Inter, sans-serif;
 }
 
-/* 1. NỀN TẢNG */
+/* 1. RESET & CƠ BẢN */
 * { box-sizing: border-box; }
 html, body {
   margin: 0; padding: 0;
-  font-family: var(--inter);
   font-size: 18px;
+  font-family: var(--inter);
   background-color: var(--bg-color);
   color: var(--fg-color);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-/* 2. LAYOUT GRID - Giữ nguyên hệ thống chia cột phức tạp của bạn */
+h2, h4 { font-weight: 800; line-height: 1.25; margin: 1rem 0; }
+a { font-weight: 600; text-decoration: none; transition: 0.2s; }
+
+/* 2. LAYOUT GRID - Giữ nguyên hệ thống chia cột so le */
 .container {
   display: grid;
   gap: 0 var(--grid-gap);
   grid-template-columns: [full-start] minmax(0, 1fr) [main-start] repeat(5, minmax(1rem, calc(var(--pagewidth)/5))) [main-end] minmax(0, 1fr) [full-end];
   margin: 2rem 0;
 }
+
 .container * { grid-column: main; }
+
 .left-text { grid-column: 2/5; align-self: center; }
 .right-text { grid-column: 4/7; align-self: center; }
 .left-img { grid-column: 1/4; overflow: hidden; justify-self: end; }
-.right-img { grid-column: 5/-1; overflow: hidden; }
-.left-img img { max-width: 100%; border-radius: var(--rounded-corner); }
+.left-img img { max-width: 100%; border-radius: var(--rounded-corner); display: block; }
 
-/* 3. HERO & HEADER - Style tím đặc trưng */
+/* 3. HERO & HEADER - Style tím Adwaita */
 .hero {
   background: #362F4F;
   color: var(--light1);
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .hero section.header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: calc(var(--pagewidth) + 6rem);
   padding: 0 var(--grid-gap);
-  align-items: center;
 }
-#logo { font-weight: 900; font-size: 1.4rem; margin: 0; }
-.nav { display: flex; list-style: none; }
 
-/* 4. BUTTONS - Hiệu ứng hover đặc trưng của file cũ */
+#logo { font-size: 1.4rem; font-weight: 900; margin: 0; }
+.nav { list-style: none; padding: 0; display: flex; }
+
+/* 4. BUTTONS - Hiệu ứng viền đặc trưng */
 .btn {
-  font-weight: 600;
   padding: 0.6rem 1.5rem;
   border-radius: var(--btnround);
-  transition: box-shadow 200ms var(--slickease);
   display: inline-block;
+  transition: all 200ms var(--slickease);
+  text-align: center;
 }
+
 .hero .btn {
   color: var(--light1);
   background: transparent;
   box-shadow: 0 0 0 2px var(--light1);
 }
+
 .hero .btn:hover { box-shadow: 0 0 0 4px var(--light1); }
+
 .btn.square {
   border-radius: 8px;
-  background: var(--gnomeblue);
+  background-color: var(--gnomeblue);
   color: var(--light1);
 }
+
+.btn.square:hover { transform: scale(1.05); }
 
 /* 5. TILES - Danh sách câu lạc bộ */
 .tiles {
@@ -90,48 +98,65 @@ html, body {
   gap: 1.5rem;
   margin: 1rem 0 3rem;
 }
+
 .tile {
   background: var(--light1);
   border-radius: var(--rounded-corner);
   overflow: hidden;
   transition: all 300ms var(--slickease);
+  display: flex;
+  flex-direction: column;
 }
-.tile:hover { transform: translateY(-4px); }
-.tile img { width: 100%; height: 300px; object-fit: cover; }
-.tile .description { padding: 1rem; }
-.tile h4 { margin: 0; font-size: 1.2rem; }
+
+.tile:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+.tile img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.tile .description, .tile div:not(.description) { padding: 1.5rem; }
 
 /* 6. CAMPAIGN BAR - Dòng thông báo màu xanh */
 .colored-row.campaign {
   background: #016B61;
-  padding: 0.5rem 1rem;
+  padding: 0;
   margin: 2rem 0;
+  overflow: hidden;
 }
+
 .colored-row a {
   display: flex;
   align-items: center;
-  justify-content: center;
   color: var(--light1);
+  padding: 0.5rem 1rem;
 }
 
 /* 7. FOOTER */
 footer {
-  background: #1a1622;
+  background-color: #1a1622;
   color: var(--light1);
-  padding: 3rem 1rem;
+  padding: 3rem 0;
   text-align: center;
 }
-.socials svg { width: 32px; fill: rgba(255,255,255,0.6); transition: 0.2s; }
+
+.socials { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+.socials svg { width: 32px; height: 32px; fill: rgba(255,255,255,0.6); transition: 0.3s; }
 .socials svg:hover { fill: var(--light1); }
 
-/* 8. RESPONSIVE & DARK MODE */
-@media (max-width: 700px) {
+/* 8. RESPONSIVE - Sửa lỗi tràn màn hình */
+@media (max-width: 800px) {
+  .container { display: flex; flex-direction: column; padding: 0 1.5rem; }
   .tiles { grid-template-columns: 1fr; }
-  .left-text, .right-text, .left-img { grid-column: main; }
-  .hero section.header { flex-direction: column; gap: 1rem; }
+  .left-img img { border-radius: var(--rounded-corner); }
+  .hero section.header { flex-direction: column; gap: 1.5rem; }
 }
 
+/* 9. DARK MODE */
 @media (prefers-color-scheme: dark) {
   :root { --bg-color: #111; --fg-color: #eee; }
   .tile { background: var(--dark5); border: 1px solid var(--dark3); }
+  .tile h4 { color: #fff; }
 }
