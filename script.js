@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const MEDIA_NAME = document.getElementById('media-name'); 
     let CURRENT_INDEX = 0;
     let DEFAULT_PHOTO_TIME = 8000; // Ảnh dừng 8 giây
-    let MAX_VIDEO_TIME = 20000;    // Video tối đa 10 giây
+    let MAX_VIDEO_TIME = 10000;    // Video tối đa 10 giây
     let INTERVAL_ID;
 
     function UPDATE_MEDIA_NAME() {
