@@ -89,18 +89,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* Mặc định ẩn */
+    opacity: 0; 
     transition: opacity 1.5s ease-in-out;
     z-index: 0;
 }
 
 .slider-media.active {
-    opacity: 1; /* chỉ hiện khi có class active */
-    z-index: 1; /* nhảy lên trên để nhìn thấy được */
+    opacity: 1; /*chỉ hiện khi có class active */
+    z-index: 1; /* nhảy lên trên để nhìn thấy được*/
 }
 
 .overlay {
-    z-index: 2; /* lớp phủ đen phải nằm trên ảnh/video */
+    z-index: 2; /* lớp phủ đen phải nằm trên ảnhvideo */
 }
 
 .hero-content, .navbar, .contact-vertical {
