@@ -183,7 +183,7 @@ body {
     display: inline-block;
 }
 
-/*xoay dọc*/
+/*thằng này là cái chữ ở bên trái á khôi*/
 .contact-vertical {
     position: absolute;
     right: 30px;
@@ -200,7 +200,7 @@ body {
 /* đẹp trai trên điện thoại */
 @media (max-width: 768px) {
     .navbar { padding: 20px; }
-    .contact-vertical { display: none; }
+    .contact-vertical { display: none; } /*lí do mà nó không hiện trên điện thoại là đây, có lí do cả*/
     .hero-content h1 { font-size: 3rem; }
     .logo img {
         height: 46px; 
