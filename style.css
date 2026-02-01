@@ -51,7 +51,7 @@ body {
 
 .custom-btn {
     display: inline-block;
-    padding: 12px 32px;
+    padding: 12px 20px;
     border-radius: 4px; /*t ko cho bo góc, thằng khôi sửa nữa xóa role*/
     color: white;
     font-size: 14px;
