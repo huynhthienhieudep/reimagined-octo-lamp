@@ -99,10 +99,6 @@ body {
     z-index: 1; /* nhảy lên trên để nhìn thấy được*/
 }
 
-.overlay {
-    z-index: 2; /* lớp phủ đen phải nằm trên ảnhvideo */
-}
-
 .hero-content, .navbar, .contact-vertical {
     z-index: 10; /* Nội dung chữ phải nằm trên cùng */
 }
@@ -183,7 +179,7 @@ body {
     display: inline-block;
 }
 
-/*thằng này là cái chữ ở bên trái á khôi*/
+/*thằng này là cái chữ ở bên phải á khôi*/
 .contact-vertical {
     position: absolute;
     right: 30px;
