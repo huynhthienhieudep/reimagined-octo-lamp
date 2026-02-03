@@ -174,25 +174,26 @@ body {
 #media-name {
     color: #fff;
     font-weight: 700;
-    transition: opacity 0.5s ease , transform 0.5s ease; /*mờ khi đổi tên */
-    transform: translateY(-6px);
+    transition: opacity 0.5s ease;/*mờ khi đổi tên */
     display: inline-block;
 }
 
 /*thằng này là cái chữ ở bên phải á khôi*/
 .contact-vertical {
     position: absolute;
-    right: 30px;
-    bottom: 150px;
-    transform: rotate(90deg);
-    transform-origin: right bottom;
+    right: 20px; 
+    top: 50%;
+    /* đẩy hết vào bên phải*/
+    transform: translateY(-50%) rotate(90deg) translateX(50%);
+    transform-origin: right center; 
+
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.6);
-    z-index: 2;
+    z-index: 69; /* tăng lên 69 cho chắc */
+    white-space: nowrap;
 }
-
 /* đẹp trai trên điện thoại */
 @media (max-width: 768px) {
     .navbar { padding: 20px; }

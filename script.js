@@ -35,14 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cập nhật tên hiển thị
         UPDATE_MEDIA_NAME();
 
-        //  Tính toán thời gian dừng cho slide này
         let NEXT_TIME = DEFAULT_PHOTO_TIME;
 
         if (NEXT_MEDIA.tagName === 'VIDEO') {
             NEXT_MEDIA.currentTime = 0; // Luôn chạy lại từ đầu video
             NEXT_MEDIA.play().catch(e => console.log("Autoplay bị chặn"));
-            
-            // LOGIC GIỚI HẠN 10 GIÂY
             // Nếu video dài hơn 10s, chỉ lấy 10s. Nếu ngắn hơn 10s, lấy theo thời gian thực của nó.
             if (!isNaN(NEXT_MEDIA.duration) && NEXT_MEDIA.duration > 0) {
                 let VIDEO_DURATION_MS = NEXT_MEDIA.duration * 1000;
